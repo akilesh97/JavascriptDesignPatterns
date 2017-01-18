@@ -94,9 +94,23 @@ var mod = (function (m) {
 })(mod || {}); // this will create a new object if the object is not declared.
 
 
+// jquery chaining implementation using Modular design pattern
+var Jquery = (function () {
+    var name = '';
+    var concat = function (str) {
+        name = name + ' ' + str;
+        return this;
+    };
+    var print = function () {
+        console.log(name);
+        return this;
+    };
+    return {
+        concat: concat,
+        print: print
+    };
+})();
 
-
-
-
+Jquery.concat('Akil').concat('Akula').concat('test').print();
 
 
